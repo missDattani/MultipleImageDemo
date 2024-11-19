@@ -1,0 +1,18 @@
+<!-- <div class="container text-center">
+    <img *ngFor="let url of urls" [src]="url" height="100"><br>
+    <input type="file" (change)="onSelect($event)" multiple>
+</div> -->
+
+
+<div class="container text-center">
+    <div *ngFor="let url of urls; let i = index" style="display: inline-block; position: relative; margin: 10px;">
+      <img [src]="url" height="100">
+      <button (click)="removeImage(i)" 
+              style="position: absolute; top: 0; right: 0; background: red; color: white; border: none; border-radius: 50%; width: 20px; height: 20px;">
+        &times;
+      </button>
+    </div>
+    <br>
+    <input type="file" (change)="onSelect($event)" multiple>
+  </div>
+  
